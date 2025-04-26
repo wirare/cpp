@@ -6,7 +6,7 @@
 /*   By: wirare <wirare@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 15:19:46 by wirare            #+#    #+#             */
-/*   Updated: 2025/04/24 18:37:29 by wirare           ###   ########.fr       */
+/*   Updated: 2025/04/26 14:26:16 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #pragma once
@@ -17,10 +17,10 @@
 class Harl
 {
 	public:
-		Harl();
+		Harl(const std::string level);
 		~Harl();
 
-		void complain(std::string level);
+		void complain();
 	
 	private:
 		void debug();
@@ -29,4 +29,5 @@ class Harl
 		void error();
 
 		void (Harl::*HarlFn[4])();
+		int	_HarlLevel;
 };

@@ -6,7 +6,7 @@
 /*   By: wirare <wirare@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 13:54:14 by wirare            #+#    #+#             */
-/*   Updated: 2025/04/23 14:01:04 by wirare           ###   ########.fr       */
+/*   Updated: 2025/04/26 14:34:15 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #pragma once
@@ -19,7 +19,7 @@ class Weapon
 	public:
 		Weapon(const std::string type);
 		~Weapon();
-		std::string getType();
+		const std::string& getType();
 		void setType(const std::string type);
 	
 	private:

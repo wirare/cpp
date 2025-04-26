@@ -6,17 +6,23 @@
 /*   By: wirare <wirare@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 18:20:24 by wirare            #+#    #+#             */
-/*   Updated: 2025/04/24 22:57:44 by wirare           ###   ########.fr       */
+/*   Updated: 2025/04/26 14:26:35 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Harl.hpp"
 
-Harl::Harl() 
-{	
+Harl::Harl(const std::string level)
+{
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int i = 0;
+	
 	this->HarlFn[0] = &Harl::debug;
 	this->HarlFn[1] = &Harl::info;
 	this->HarlFn[2] = &Harl::warning;
 	this->HarlFn[3] = &Harl::error;
+	while (i < 4 && levels[i] != level)
+		i++;
+	this->_HarlLevel = i;
 }
 
 Harl::~Harl() 
@@ -48,9 +54,30 @@ void Harl::error( void )
 	std::cout << "This is unacceptable! I want to speak to the manager now." << "\n";
 }
 
-void Harl::complain( std::string level ) 
+void Harl::complain() 
 {
-	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
-	while ()
+	switch (this->_HarlLevel)
+	{
+		case 0:
+			(this->*HarlFn[0])();
+			(this->*HarlFn[1])();
+			(this->*HarlFn[2])();
+			(this->*HarlFn[3])();
+			break;
+		case 1:
+			(this->*HarlFn[1])();
+			(this->*HarlFn[2])();
+			(this->*HarlFn[3])();
+			break;
+		case 2:
+			(this->*HarlFn[2])();
+			(this->*HarlFn[3])();
+			break;
+		case 3:
+			(this->*HarlFn[3])();
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << "\n";
+			break;
+	}
 }

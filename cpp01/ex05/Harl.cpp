@@ -6,7 +6,7 @@
 /*   By: wirare <wirare@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 18:20:24 by wirare            #+#    #+#             */
-/*   Updated: 2025/04/24 18:22:15 by wirare           ###   ########.fr       */
+/*   Updated: 2025/04/26 14:38:47 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Harl.hpp"
@@ -55,22 +55,8 @@ void Harl::complain( std::string level )
 
 	while (i < 4 && levels[i] != level)
 		i++;
-	switch (i)
-	{
-		case 0:
-			(this->*HarlFn[0])();
-			break;
-		case 1:
-			(this->*HarlFn[1])();
-			break;
-		case 2:
-			(this->*HarlFn[2])();
-			break;
-		case 3:
-			(this->*HarlFn[3])();
-			break;
-		default:
-			std::cout << "[ Probably complaining about insignificant problems ]" << "\n";
-			break;
-	}
+	if (i < 4)
+		(this->*HarlFn[i])();
+	else
+		std::cout << "[ Probably complaining about insignificant problems ]" << "\n";
 }

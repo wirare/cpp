@@ -6,7 +6,7 @@
 /*   By: wirare <wirare@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 13:59:06 by wirare            #+#    #+#             */
-/*   Updated: 2025/04/23 14:01:38 by wirare           ###   ########.fr       */
+/*   Updated: 2025/04/26 14:34:26 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Weapon.hpp"
@@ -21,7 +21,7 @@ Weapon::~Weapon()
 	std::cout << "Weapon destructor called" << "\n";
 }
 
-std::string Weapon::getType() 
+const std::string& Weapon::getType() 
 {
 	return this->_type;
 }
