@@ -6,7 +6,7 @@
 /*   By: wirare <wirare@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 20:58:39 by wirare            #+#    #+#             */
-/*   Updated: 2025/04/22 18:52:46 by wirare           ###   ########.fr       */
+/*   Updated: 2025/04/26 17:59:41 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "phonebook.hpp"
@@ -53,7 +53,7 @@ void Phonebook::searchContact(void)
 		return ;
 	}
 	std::cout << "Index     |First Name|Last Name | Nickname " << std::endl;
-	for (int i = 0; i < (this->count % 8); i++)
+	for (int i = 0; i < this->count; i++)
 	{
 		Contact	contact = this->contacts[i];
 		std::cout << std::setw(10) << i+1 << '|';
@@ -64,12 +64,12 @@ void Phonebook::searchContact(void)
 	std::stringstream str(getInput("Enter index of contact to display: "));
 	int index;
 	str >> index;
-	if (index <= 0 || index >= this->count)
+	if (index <= 0 || index >= this->count + 1)
 	{
 		std::cout << "Invalid index." << "\n";
 		return ;
 	}
-	displayContact(this->contacts[index+1]);
+	displayContact(this->contacts[index - 1]);
 }
 
 std::string Phonebook::setupString(const std::string str)

@@ -6,12 +6,11 @@
 /*   By: wirare <wirare@42angouleme.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 17:11:31 by wirare            #+#    #+#             */
-/*   Updated: 2025/04/23 17:45:23 by wirare           ###   ########.fr       */
+/*   Updated: 2025/04/26 18:58:37 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <iostream>
 #include <fstream>
-#include <istream>
 #include <ostream>
 #include <string>
 #include <stdlib.h>

@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wirare <wirare@42angouleme.fr>             +#+  +:+       +#+        */
+/*   By: ellanglo <ellanglo@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 00:52:21 by wirare            #+#    #+#             */
-/*   Updated: 2025/04/26 17:23:14 by ellanglo         ###   ########.fr       */
+/*   Created: 2025/04/26 17:18:10 by ellanglo          #+#    #+#             */
+/*   Updated: 2025/04/27 21:08:42 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #pragma once
 
+#include <iostream>
 #include <string>
 
-class Zombie {
-  private:
-    std::string _name;
+class Fixed
+{
+	public:
+		Fixed();
+		Fixed(const Fixed &copy);
+		Fixed &operator=(const Fixed &copy);
+		~Fixed();
 
-  public:
-	Zombie();
-    Zombie(const std::string& name);
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
 
-    void announce(void) const;
+	private:
+		const static int _fractionalSize = 8;
+		int _value;
 };
-
-Zombie* zombieHorde(int N, std::string name);
