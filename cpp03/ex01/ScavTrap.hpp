@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wirare <wirare@42angouleme.fr>             +#+  +:+       +#+        */
+/*   By: ellanglo <ellanglo@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 01:33:31 by wirare            #+#    #+#             */
-/*   Updated: 2025/04/28 19:50:17 by ellanglo         ###   ########.fr       */
+/*   Created: 2025/04/28 19:08:48 by ellanglo          #+#    #+#             */
+/*   Updated: 2025/04/28 20:01:41 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "Zombie.hpp"
+#include "ClapTrap.hpp"
 
-int main()
+class ScavTrap: public ClapTrap
 {
-	Zombie *heap = newZombie("heap heap");
-	heap->announce();
-	delete heap;
-	randomChump("stack stack");
-}
+	public:
+		ScavTrap();
+		ScavTrap(const std::string &name);
+		~ScavTrap();
+		ScavTrap &operator=(const ScavTrap &other);
+
+		void guardGate();
+		void attack(const std::string &target);
+};

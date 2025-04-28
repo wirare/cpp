@@ -6,7 +6,7 @@
 /*   By: ellanglo <ellanglo@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 20:43:57 by ellanglo          #+#    #+#             */
-/*   Updated: 2025/04/28 17:33:29 by ellanglo         ###   ########.fr       */
+/*   Updated: 2025/04/28 19:57:03 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <iostream>
@@ -23,9 +23,9 @@
 
 int main( void )
 {
-	Point a(0.0f, 0.0f);
-	Point b(0.0f, 0.0f);
-	Point c(0.0f, 0.0f);
+	Point a(-15.0f, -9.0f);
+	Point b(35.0f, 0.0f);
+	Point c(-1.0f, 9.0f);
 
 	Fixed x_min = Fixed::min(a.getX(), Fixed::min(b.getX(), c.getX())) - 5;
 	Fixed x_max = Fixed::max(a.getX(), Fixed::max(b.getX(), c.getX())) + 5;

@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wirare <wirare@42angouleme.fr>             +#+  +:+       +#+        */
+/*   By: ellanglo <ellanglo@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 01:33:31 by wirare            #+#    #+#             */
-/*   Updated: 2025/04/28 19:50:17 by ellanglo         ###   ########.fr       */
+/*   Created: 2025/04/28 19:08:48 by ellanglo          #+#    #+#             */
+/*   Updated: 2025/04/28 20:11:01 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "Zombie.hpp"
+#include "ClapTrap.hpp"
 
-int main()
+class FragTrap: public ClapTrap
 {
-	Zombie *heap = newZombie("heap heap");
-	heap->announce();
-	delete heap;
-	randomChump("stack stack");
-}
+	public:
+		FragTrap();
+		FragTrap(const std::string &name);
+		~FragTrap();
+		FragTrap &operator=(const FragTrap &other);
+
+		void highFivesGuys(void);
+};
