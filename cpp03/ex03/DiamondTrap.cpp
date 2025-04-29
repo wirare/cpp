@@ -6,15 +6,15 @@
 /*   By: ellanglo <ellanglo@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 22:27:12 by ellanglo          #+#    #+#             */
-/*   Updated: 2025/04/28 22:41:12 by ellanglo         ###   ########.fr       */
+/*   Updated: 2025/04/29 15:42:48 by ellanglo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap( void ): ClapTrap("clap_name"), ScavTrap(), FragTrap(), _name("default"){
-	_hitPoints = FragTrap::_hitPoints;
-	_energyPoints = ScavTrap::_energyPoints;
-	_attackDamage = FragTrap::_attackDamage;
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 30;
 	std::cout << "DiamondTrap default constructor called" << "\n";
 }
 
